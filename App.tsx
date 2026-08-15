@@ -1,23 +1,16 @@
-import { StatusBar, StyleSheet, Text, View } from 'react-native';
-import {
-  SafeAreaProvider,
-  useSafeAreaInsets,
-} from 'react-native-safe-area-context';
+import React from 'react';
 
-function App() {
- 
+import { ThemeProvider } from './src/theme';
+import Home from './src/screens/Home';
 
+
+
+const App = () => {
   return (
-    <SafeAreaProvider>
-      
-      <View>
-        <Text>App</Text>
-      </View>
-    </SafeAreaProvider>
+    <ThemeProvider>
+     <Home />
+    </ThemeProvider>
   );
-}
-
-
-
+};
 
 export default App;
