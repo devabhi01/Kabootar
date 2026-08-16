@@ -40,6 +40,7 @@ export const ThemeProvider = ({ children }) => {
 
 export const useTheme = () => {
   const context = useContext(ThemeContext);
+  console.log('ThemeContext:', context); // Debugging line
 
   if (!context) {
     throw new Error('useTheme must be used inside ThemeProvider');
