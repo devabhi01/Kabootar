@@ -9,8 +9,10 @@ import {
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { StyleSheet, TextInput, TouchableOpacity } from 'react-native';
 import { useTheme } from '../theme/ThemeContext';
+import { useNavigation } from '@react-navigation/native';
 
-const Login = ({ navigation }) => {
+const Login = () => {
+  const navigation = useNavigation();
   const { colors } = useTheme();
   const [phone, setPhone] = useState('');
 
@@ -84,6 +86,7 @@ const Login = ({ navigation }) => {
                     backgroundColor: colors.primary,
                   },
                 ]}
+                onPress={() => navigation.navigate('Main')}
               >
                 <View style={styles.buttonContent}>
                   <Text

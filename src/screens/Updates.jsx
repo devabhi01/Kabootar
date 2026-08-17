@@ -1,11 +1,11 @@
 import { Button, StyleSheet, Text, View } from 'react-native';
 import React from 'react';
+import { useNavigation } from '@react-navigation/native';
 import { useTheme } from '../theme';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import { useNavigation } from '@react-navigation/native';
 import AppHeader from '../components/AppHeader';
 
-const Calls = () => {
+const Updates = () => {
   const navigation = useNavigation();
   const { colors } = useTheme();
 
@@ -18,19 +18,19 @@ const Calls = () => {
         },
       ]}
     >
-      <AppHeader title="Calls" />
+      <AppHeader title="Updates" />
       <View style={styles.content}>
         <Text>Home</Text>
         <Button
-          title="Go to Contacts"
-          onPress={() => navigation.navigate('Contacts')}
+          title="Go to Settings"
+          onPress={() => navigation.navigate('Settings')}
         />
       </View>
     </SafeAreaView>
   );
 };
 
-export default Calls;
+export default Updates;
 
 const styles = StyleSheet.create({
   container: {

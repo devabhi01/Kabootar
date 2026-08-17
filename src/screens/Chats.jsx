@@ -1,11 +1,12 @@
-import { Button, StyleSheet, Text, View } from 'react-native';
+import { Button, ScrollView, StyleSheet, Text, View } from 'react-native';
 import React from 'react';
-import { useTheme } from '../theme';
-import { SafeAreaView } from 'react-native-safe-area-context';
 import { useNavigation } from '@react-navigation/native';
+import { useTheme } from '../theme/ThemeContext';
+import { SafeAreaView } from 'react-native-safe-area-context';
+
 import AppHeader from '../components/AppHeader';
 
-const Calls = () => {
+const Chats = () => {
   const navigation = useNavigation();
   const { colors } = useTheme();
 
@@ -18,19 +19,21 @@ const Calls = () => {
         },
       ]}
     >
-      <AppHeader title="Calls" />
+      <AppHeader title="Kabootar" />
+
       <View style={styles.content}>
-        <Text>Home</Text>
+        <Text style={{ color: colors.text }}>Home</Text>
+
         <Button
-          title="Go to Contacts"
-          onPress={() => navigation.navigate('Contacts')}
+          title="Go to login"
+          onPress={() => navigation.navigate('Login')}
         />
       </View>
     </SafeAreaView>
   );
 };
 
-export default Calls;
+export default Chats;
 
 const styles = StyleSheet.create({
   container: {
@@ -38,6 +41,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     paddingHorizontal: 12,
   },
+
   content: {
     flex: 1,
   },

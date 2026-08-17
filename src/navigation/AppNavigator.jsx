@@ -28,6 +28,7 @@ const AppNavigator = () => {
           headerShown: false,
         }}
       />
+      
       <Stack.Screen
         name="Login"
         component={Login}
