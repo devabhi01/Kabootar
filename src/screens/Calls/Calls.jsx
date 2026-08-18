@@ -1,12 +1,11 @@
-import { Button, ScrollView, StyleSheet, Text, View } from 'react-native';
+import { Button, StyleSheet, Text, View } from 'react-native';
 import React from 'react';
-import { useNavigation } from '@react-navigation/native';
-import { useTheme } from '../theme/ThemeContext';
+import { useTheme } from '../../theme';
 import { SafeAreaView } from 'react-native-safe-area-context';
+import { useNavigation } from '@react-navigation/native';
+import AppHeader from '../../components/AppHeader';
 
-import AppHeader from '../components/AppHeader';
-
-const Chats = () => {
+const Calls = () => {
   const navigation = useNavigation();
   const { colors } = useTheme();
 
@@ -20,7 +19,7 @@ const Chats = () => {
       ]}
     >
       <AppHeader
-        title="Kabootar"
+        title="Calls"
         menuItems={[
           {
             label: 'New Chat',
@@ -35,27 +34,32 @@ const Chats = () => {
             },
           },
           {
-            label: 'Settings',
+            label: 'Call Settings',
             onPress: () => {
-              navigation.navigate('Settings');
+              navigation.navigate('CallSetting');
             },
           },
         ]}
       />
-
       <View style={styles.content}>
-        <Text style={{ color: colors.text }}>Chat Page In Development</Text>
-
+        <Text>Incoming Call</Text>
         <Button
-          title="Go to login"
-          onPress={() => navigation.navigate('Login')}
+          title="Go to Incoming Call"
+          onPress={() => navigation.navigate('IncomingCall')}
+        />
+      </View>
+      <View style={styles.content}>
+        <Text>OutGoing Call</Text>
+        <Button
+          title="Go to OutgoingCall"
+          onPress={() => navigation.navigate('OutgoingCall')}
         />
       </View>
     </SafeAreaView>
   );
 };
 
-export default Chats;
+export default Calls;
 
 const styles = StyleSheet.create({
   container: {
@@ -63,10 +67,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     paddingHorizontal: 12,
   },
-
   content: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
   },
 });

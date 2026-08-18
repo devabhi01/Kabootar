@@ -3,6 +3,9 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 import Login from '../screens/Login';
 import Splash from '../screens/Splash';
+import CallSetting from '../screens/Calls/CallSetting';
+import OutgoingCall from '../screens/Calls/OutgoingCall';
+import IncomingCall from '../screens/Calls/IncomingCall';
 import CreateAccount from '../screens/CreateAccount';
 import BottomTabNavigator from './BottomTabNavigator';
 
@@ -28,7 +31,7 @@ const AppNavigator = () => {
           headerShown: false,
         }}
       />
-      
+      {/* Authentication  */}
       <Stack.Screen
         name="Login"
         component={Login}
@@ -42,6 +45,31 @@ const AppNavigator = () => {
         component={CreateAccount}
         options={{
           headerShown: false,
+        }}
+      />
+
+      {/* Calls Screen */}
+      <Stack.Screen
+        name="CallSetting"
+        component={CallSetting}
+        options={{
+          headerShown: false,
+        }}
+      />
+      <Stack.Screen
+        name="IncomingCall"
+        component={IncomingCall}
+        options={{
+          headerShown: false,
+          animation: 'slide_from_bottom',
+        }}
+      />
+      <Stack.Screen
+        name="OutgoingCall"
+        component={OutgoingCall}
+        options={{
+          headerShown: false,
+          animation: 'slide_from_bottom',
         }}
       />
     </Stack.Navigator>

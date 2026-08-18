@@ -1,11 +1,11 @@
 import { Button, StyleSheet, Text, View } from 'react-native';
 import React from 'react';
-import { useTheme } from '../theme';
+import { useTheme } from '../../theme';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useNavigation } from '@react-navigation/native';
-import AppHeader from '../components/AppHeader';
+import AppHeader from '../../components/AppHeader';
 
-const Calls = () => {
+const CallSetting = () => {
   const navigation = useNavigation();
   const { colors } = useTheme();
 
@@ -18,7 +18,29 @@ const Calls = () => {
         },
       ]}
     >
-      <AppHeader title="Calls" />
+      <AppHeader
+        title="Call Settings"
+        menuItems={[
+          {
+            label: 'New Chat',
+            onPress: () => {
+              console.log('New Chat');
+            },
+          },
+          {
+            label: 'Search',
+            onPress: () => {
+              console.log('Search');
+            },
+          },
+          {
+            label: 'Call Settings',
+            onPress: () => {
+              navigation.navigate('Settings');
+            },
+          },
+        ]}
+      />
       <View style={styles.content}>
         <Text>Home</Text>
         <Button
@@ -30,7 +52,7 @@ const Calls = () => {
   );
 };
 
-export default Calls;
+export default CallSetting;
 
 const styles = StyleSheet.create({
   container: {

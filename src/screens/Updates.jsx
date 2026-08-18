@@ -20,7 +20,7 @@ const Updates = () => {
     >
       <AppHeader title="Updates" />
       <View style={styles.content}>
-        <Text>Home</Text>
+        <Text style={{ color: colors.text }}>Update Page in Development</Text>
         <Button
           title="Go to Settings"
           onPress={() => navigation.navigate('Settings')}
@@ -40,5 +40,7 @@ const styles = StyleSheet.create({
   },
   content: {
     flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
   },
 });

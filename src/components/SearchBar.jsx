@@ -1,7 +1,7 @@
 import { StyleSheet, Text, View } from 'react-native';
 import React from 'react';
 
-const Search = () => {
+const SearchBar = () => {
   return (
     <View>
       <Text>Search</Text>
@@ -9,6 +9,6 @@ const Search = () => {
   );
 };
 
-export default Search;
+export default SearchBar;
 
 const styles = StyleSheet.create({});

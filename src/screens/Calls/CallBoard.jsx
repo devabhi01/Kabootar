@@ -1,14 +1,14 @@
 import { Button, StyleSheet, Text, View } from 'react-native';
-import React from 'react';
-import { useNavigation } from '@react-navigation/native';
-import { useTheme } from '../theme';
+import React, { useState } from 'react';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import AppHeader from '../components/AppHeader';
+import { useNavigation } from '@react-navigation/native';
+import AppHeader from '../../components/AppHeader';
+import { useTheme } from '../../theme';
 
-const Settings = () => {
+const CallBoard = () => {
   const navigation = useNavigation();
   const { colors } = useTheme();
-
+  const [callType, setCallType] = useState('audio');
   return (
     <SafeAreaView
       style={[
@@ -18,21 +18,14 @@ const Settings = () => {
         },
       ]}
     >
-      <AppHeader title="Setting" />
       <View style={styles.content}>
-        <Text style={{ color: colors.text }}>
-          Setting Page is in Development
-        </Text>
-        <Button
-          title="Go to Calls"
-          onPress={() => navigation.navigate('Calls')}
-        />
+        {callType === 'audio' ? <AudioCall /> : <VideoCall />}
       </View>
     </SafeAreaView>
   );
 };
 
-export default Settings;
+export default CallBoard;
 
 const styles = StyleSheet.create({
   container: {
@@ -42,7 +35,5 @@ const styles = StyleSheet.create({
   },
   content: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
   },
 });

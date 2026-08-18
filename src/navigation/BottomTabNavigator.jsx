@@ -1,7 +1,7 @@
 import React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Chats from '../screens/Chats';
-import Calls from '../screens/Calls';
+import Calls from '../screens/Calls/Calls';
 import Updates from '../screens/Updates';
 import Settings from '../screens/Settings';
 import { Image, TouchableOpacity } from 'react-native';
